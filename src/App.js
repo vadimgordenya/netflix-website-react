@@ -8,7 +8,7 @@ import {Route, Switch} from "react-router-dom";
 const App = () => (
     <div className="App">
         <Switch>
-            <Route path='/' component={Main}/>
+            <Route path='/' component={Main} />
         </Switch>
     </div>
 );
