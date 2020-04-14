@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Link, NavLink} from "react-router-dom";
 import styled from "styled-components";
 import {Icon} from "react-icons-kit";
@@ -6,28 +6,26 @@ import {ic_keyboard_arrow_right} from 'react-icons-kit/md/ic_keyboard_arrow_righ
 
 import logo from '../assets/svg/logo.svg';
 
-export default class Header extends Component {
-    render() {
-        return (
-            <HeaderComponent className="header-container">
-                <div className="header-top">
-                    <Logo src={logo} alt=""/>
-                    <NavLink className="signIn-btn" to="/">Sign In</NavLink>
-                </div>
-                <div className="header-content">
-                    <Title>See what's next.</Title>
-                    <SubTitle>WATCH ANYWHERE. CANCEL ANYTIME.</SubTitle>
-                    <Link
-                        to="/"
-                        className="main-offer-btn"
-                    >
-                        try it now
-                        <Icon className="Icon" icon={ic_keyboard_arrow_right} size={37}/>
-                    </Link>
-                </div>
-            </HeaderComponent>
-        );
-    }
+export default function Header() {
+    return (
+        <HeaderComponent className="header-container">
+            <div className="header-top">
+                <Logo src={logo} alt=""/>
+                <NavLink className="signIn-btn" to="/">Sign In</NavLink>
+            </div>
+            <div className="header-content">
+                <Title>See what's next.</Title>
+                <SubTitle>WATCH ANYWHERE. CANCEL ANYTIME.</SubTitle>
+                <Link
+                    to="/"
+                    className="main-offer-btn"
+                >
+                    try it now
+                    <Icon className="Icon" icon={ic_keyboard_arrow_right} size={37}/>
+                </Link>
+            </div>
+        </HeaderComponent>
+    );
 }
 
 // Logo
