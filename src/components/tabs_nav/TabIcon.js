@@ -8,6 +8,8 @@ export default function TabIcon(props) {
             return TabDevices_SVG;
         case "price":
             return TabPrice_SVG;
+        default:
+            return null;
     }
 }
 
