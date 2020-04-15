@@ -4,11 +4,24 @@
     height: 2.8125rem;
     fill: var(--main-grey);
 }
+@media screen and (max-width: 900px) {
+    .tab-icon-door {
+        width: 2.4rem;
+        height: 2.4rem;
+    }
+}
+
 /* Tab Nav #2 */
 .tab-icon-devices {
     width: 9.6875rem;
     height: 9.6875rem;
     fill: var(--main-grey);
+}
+@media screen and (max-width: 900px) {
+    .tab-icon-door {
+        width: 8rem;
+        height: 8rem;
+    }
 }
 /* Tab Nav #3 */
 .tab-icon-price {
@@ -16,7 +29,12 @@
     height: 4.375rem;
     fill: var(--main-grey);
 }
-
+@media screen and (max-width: 900px) {
+    .tab-icon-door {
+        width: 2.4rem;
+        height: 2.4rem;
+    }
+}
 /* Tabs */
 .tabs {
     padding-top: 1rem;
@@ -51,4 +69,21 @@ ul li:hover svg path {
 }
 .tab-selected svg path {
     fill: #fff;
+}
+
+/* Media for Tabs Nav */
+@media (min-width: 900px) {
+    .mdScreen {
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .lgScreen {
+        display: none;
+    }
+    .mdScreen {
+        display: block;
+        margin-bottom: 0.4rem;
+    }
 }

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Header from '../components/Header';
 import TabComponent from '../components/TabComponent';
+import Footer from '../components/Footer';
 
 export default class Main extends Component {
     render() {
@@ -8,6 +9,7 @@ export default class Main extends Component {
             <div>
                 <Header />
                 <TabComponent />
+                <Footer />
             </div>
         );
     }

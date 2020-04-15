@@ -4,6 +4,7 @@ import { Button } from '../styled_components/Button';
 import styled from "styled-components";
 import {Icon} from "react-icons-kit";
 import {ic_keyboard_arrow_right} from 'react-icons-kit/md/ic_keyboard_arrow_right'
+import { generateMedia } from "styled-media-query";
 
 import logo from '../assets/svg/logo.svg';
 
@@ -29,8 +30,14 @@ export default function Header() {
     );
 }
 
-// Logo
+const customMedia = generateMedia({
+    lgDesktop: "1350px",
+    mdDesktop: "1150px",
+    tablet: "960px",
+    smTablet: "740px",
+});
 
+// Logo
 const Logo = styled.img`
     width: 10rem;
     height: 3.5rem;
@@ -38,6 +45,10 @@ const Logo = styled.img`
     top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
+    margin-left: 0;
+    ${customMedia.lessThan('tablet')`
+        left: 20%;
+    `}
 `;
 
 // Header Component
@@ -58,13 +69,17 @@ const HeaderComponent = styled.div`
         &:hover {
             background: var(--main-red-hover);
         }
+        ${customMedia.lessThan('smTablet')`
+           margin-top: 1.25rem;
+           right: 5%; 
+        `};
     }
     
     // Header top
     .header-top {
         position: relative;
         height: 10rem;
-        z-index: 1;
+        z-index: 2;
     }
     
     // Header content
@@ -76,13 +91,36 @@ const HeaderComponent = styled.div`
         justify-content: center;
         text-align: center;
         flex-direction: column;
-        z-index: 1;
+        z-index: 2;
+        
+        ${customMedia.lessThan('smTablet')`
+            display: grid;
+            grid-template-rows: repeat(3, 60px);
+            margin-top: 8rem;
+        `}
     }
     
-    .Icon svg 
-    {
+    .Icon svg {
         vertical-align: center;
         margin-left: 1.5rem;
+        ${customMedia.lessThan('tablet')`
+            display: none !important;
+        `}
+    }
+    
+    .main-offer-btn {
+        ${customMedia.lessThan('lgDesktop')`
+            margin: 0 33%:
+            font-size: 1.5rem;
+        `}
+        ${customMedia.lessThan('mdDesktop')`
+            margin: 0 25%:
+            font-size: 1.5rem;
+        `}
+        ${customMedia.lessThan('tablet')`
+            margin: 0 20%;
+            font-size: 1.3rem;
+        `}
     }
 `;
 
@@ -92,6 +130,9 @@ const Title = styled.h1`
     font-size: 5rem;
     font-weight: 700;
     lin-height: 1.1em;
+    ${customMedia.lessThan('tablet')`
+        font-size: 2.6rem;
+    `}
 `;
 
 // Subtitle
@@ -101,4 +142,8 @@ const SubTitle = styled.h2`
     line-heigth: 1.25em;
     margin: 0 0 1.875rem;
     text-transform: uppercase;
+    ${customMedia.lessThan('tablet')`
+        font-size: 1.4rem;
+        margin: 0;
+    `}
 `;
