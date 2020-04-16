@@ -1,5 +1,5 @@
 import React from 'react';
-import {NavLink} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import { Button } from '../styled_components/Button';
 import styled from "styled-components";
 import {Icon} from "react-icons-kit";
@@ -18,13 +18,15 @@ export default function Header() {
             <div className="header-content">
                 <Title>See what's next.</Title>
                 <SubTitle>WATCH ANYWHERE. CANCEL ANYTIME.</SubTitle>
-                <Button
-                    className="main-offer-btn"
-                    primary
-                >
-                    try it now
-                    <Icon className="Icon" icon={ic_keyboard_arrow_right} size={37}/>
-                </Button>
+                <Link to="/choose-plan">
+                    <Button
+                        className="main-offer-btn"
+                        primary
+                    >
+                        try it now
+                        <Icon className="Icon" icon={ic_keyboard_arrow_right} size={37}/>
+                    </Button>
+                </Link>
             </div>
         </HeaderComponent>
     );
@@ -55,7 +57,7 @@ const Logo = styled.img`
 const HeaderComponent = styled.div`
     .signIn-btn {
         right: 0;
-        margin: 1.125rem 3% 0;
+        margin: 2.125rem 3% 0;
         padding: 0.4375rem 1.0625rem;
         font-weight: 400;
         line-height: normal;
@@ -65,7 +67,7 @@ const HeaderComponent = styled.div`
         position: absolute;
         transform: translate(-50%, -50%);
         cursor: pointer;
-        transition: background 0.2s easy-in;
+        transition: background 0.2s ease-in;
         &:hover {
             background: var(--main-red-hover);
         }
