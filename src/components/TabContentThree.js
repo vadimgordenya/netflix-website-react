@@ -5,6 +5,7 @@ import Icon from 'react-icons-kit';
 import {cross} from 'react-icons-kit/icomoon/cross';
 import {checkmark} from 'react-icons-kit/icomoon/checkmark';
 import { generateMedia } from "styled-media-query";
+import {Link} from "react-router-dom";
 
 export default function TabContentThree() {
     return (
@@ -14,7 +15,9 @@ export default function TabContentThree() {
                     <span>
                         Choose one plan and watch everything on Netflix.
                     </span>
-                    <Button className="btn">try it now</Button>
+                    <Link to="/choose-plan" className="btn">
+                        <Button>try it now</Button>
+                    </Link>
                 </div>
                 <div className="tab-bottom-content">
                     <table>
@@ -92,7 +95,7 @@ const TabContainer = styled.div`
     
     .tab-top-content {
         display: grid;
-        grid-template-colums: repeat(12, 1fr);
+        grid-template-columns: repeat(12, 1fr);
         padding: 3rem 0 0;
         ${customMedia.lessThan("lgDesktop")`
             grid-template-columns: 1fr;
@@ -103,6 +106,7 @@ const TabContainer = styled.div`
     
     span {
         grid-column: 3 / 9;
+        font-size: 1.5rem;
         ${customMedia.lessThan("lgDesktop")`
             grid-column: 1 / -1;
         `};

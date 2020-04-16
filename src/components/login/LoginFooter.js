@@ -23,24 +23,24 @@ export default function LoginFooter() {
     return (
         <FooterContainer>
             <span style={{marginLeft: "10%", color: "#999"}}>
-                Questions? <Link>Call 1-877-742-1335</Link>
+                Questions? <Link to="/">Call 1-877-742-1335</Link>
             </span>
             <div className="footer-columns">
                 <ul>
                     <li>
-                        <Link>Gift Card Terms</Link>
+                        <Link to="/">Gift Card Terms</Link>
                     </li>
                 </ul>
 
                 <ul>
                     <li>
-                        <Link>Terms of Use</Link>
+                        <Link to="/">Terms of Use</Link>
                     </li>
                 </ul>
 
                 <ul>
                     <li>
-                        <Link>Privacy Statement</Link>
+                        <Link to="/">Privacy Statement</Link>
                     </li>
                 </ul>
             </div>
